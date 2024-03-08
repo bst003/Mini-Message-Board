@@ -3,3 +3,8 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  ul(class="messages")
+    each message in messages 
+      li 
+        span #{message.text} 
+        | - #{message.user} (#{message.added})
