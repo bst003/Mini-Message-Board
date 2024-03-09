@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 Add New Message
+  form(
+    method="POST"
+    action="/new"
+  )
+    div(class="field-contain")
+        label(for="text") Text 
+        input(
+            type="text" 
+            id="text"
+        )
+    div(class="field-contain")
+        label(for="user") User 
+        input(
+            type="text" 
+            id="user"
+        )
+    input(
+        type="submit"
+        value="Submit"
+    )
+
