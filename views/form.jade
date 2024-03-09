@@ -7,16 +7,18 @@ block content
     action="/new"
   )
     div(class="field-contain")
-        label(for="text") Text 
+        label(for="messageText") Text 
         input(
             type="text" 
-            id="text"
+            id="messageText"
+            name="messageText"
         )
     div(class="field-contain")
-        label(for="user") User 
+        label(for="messageUser") User 
         input(
             type="text" 
-            id="user"
+            id="messageUser"
+            name="messageUser"
         )
     input(
         type="submit"

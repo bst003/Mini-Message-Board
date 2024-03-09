@@ -14,6 +14,22 @@ const messages = [
   },
 ];
 
+router.post("/new", function (req, res, next) {
+  console.log(req.body);
+
+  const newMessage = {
+    text: req.body.messageText,
+    user: req.body.messageUser,
+    added: new Date(),
+  };
+
+  messages.push(newMessage);
+
+  console.log(messages);
+
+  res.redirect("/");
+});
+
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Mini Messageboard", messages: messages });
