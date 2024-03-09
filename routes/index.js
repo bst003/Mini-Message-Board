@@ -32,7 +32,19 @@ router.post("/new", function (req, res, next) {
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Mini Messageboard", messages: messages });
+  const updatedMessages = messages.map((message) => {
+    console.log(message);
+    message.added = message.added.toLocaleString();
+
+    return message;
+  });
+
+  console.log(updatedMessages);
+
+  res.render("index", {
+    title: "Mini Messageboard",
+    messages: updatedMessages,
+  });
 });
 
 module.exports = router;
